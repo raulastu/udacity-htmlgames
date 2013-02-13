@@ -51,13 +51,7 @@ var setup = function() {
         frames.push(img);
     }
 
-    window.setInterval(function(){
-    	animate();
-    	currentImageIndex=(currentImageIndex+1)%frames.length;
-    	// currentImageIndex++;
-    	// if(currentImageIndex==frames.length)
-    	// 	currentImageIndex=0;
-    },33.3);
+    window.setInterval(animate,33);
 };
 var currentImageIndex=0;
 var animate = function(){
@@ -71,6 +65,7 @@ var animate = function(){
     //
     context.clearRect(0,0,canvas.width, canvas.height);
   	context.drawImage(frames[currentImageIndex],0,0);
+  	currentImageIndex=(currentImageIndex+1)%frames.length;
 	// YOUR CODE HERE
 };
 
